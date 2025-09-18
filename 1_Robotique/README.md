@@ -1,5 +1,10 @@
 # oc25_Alexis
+
+option complémentaire en informatique du gymnase du Bugnon
 # Projet robotique
+
+
+Dans ce projet nous programmons le robot Kitronik MOVE
 
 Dans ce projet le robot
 
@@ -18,3 +23,9 @@ Dans ce projet le robot
 Nous nous sommes documenter avec :
 
 
+- 3 niveau de titres
+- liste avec puces et numéroté
+- des examples de code
+- des formules mathématiques
+- des images
+- des hyperliens
