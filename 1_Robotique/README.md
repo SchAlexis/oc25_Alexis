@@ -3,7 +3,7 @@
 
 Dans ce projet le robot
 
--commencer le parcourt à une position A
+- commencer le parcourt à une position A
 - sivre une ligne
 - va détécter un objet puis le ramener en A
 
