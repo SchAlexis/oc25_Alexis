@@ -4,6 +4,8 @@ option complémentaire en informatique du gymnase du Bugnon
 ## Description
 Dans ce projet nous programmons le robot Kitronik MOVE
 
+![](Projet ROB/robot.jpg)
+
 ## Partie obligatoire
 Dans ce mini-projet le robot
 
