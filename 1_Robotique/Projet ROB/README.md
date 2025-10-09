@@ -34,3 +34,6 @@ Toute la documentation se trouve dans ce fichier README.md Vous devez utiliser
 - des formules mathématiques
 - des images
 - des hyperliens
+
+
+set_all(color) -essayer
