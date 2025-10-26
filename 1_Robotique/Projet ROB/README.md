@@ -2,10 +2,153 @@
 option complémentaire en informatique du gymnase du Bugnon
 
 ## Description
-Dans ce projet nous programmons le robot Kitronik MOVE
+Dans ce projet nous programmons le robot Kitronik MOVE avec une parite obligatoire et une partie libre.
 
 ![](images/images.jpg)
+Entièreter du code ci-dessous :
+```
+from microbit import *
+from machine import time_pulse_us
+import KitronikMOVEMotor
+import music
+import radio
+import random 
 
+g = 7
+display.scroll(g)
+radio.on()
+radio.config(group=g)
+
+trigger = pin13
+echo = pin14
+
+robot = KitronikMOVEMotor.MOVEMotor()
+robot.move(0, 0)
+
+trigger.write_digital(0)
+echo.read_digital()
+robot.move(0, 0)
+
+prog = 0 
+display.show(prog)
+
+def avancer():
+    robot.move(-60,-60,500)
+def reculer():
+    robot.move(60,60,500)
+def droite():
+    robot.move(60,-60,500)
+def gauche():
+    robot.move(-60,60,500)
+def ouvre():
+    robot.goToPosition(1, 160)
+def ferme():
+    robot.goToPosition(1, 20)
+
+def distance_cm():
+    left = pin1.read_analog()
+    right = pin2.read_analog()
+    d = (left - right)
+    d = d // 10
+    robot.move(15 - d, 15 + d)
+    trigger.write_digital(1)
+    trigger.write_digital(0)
+    distance = time_pulse_us(echo, 1)/58.
+    return round(distance)
+
+    
+while True:
+    
+    if button_a.was_pressed():
+        robot.move(0, 0)
+        prog = (prog + 1) % 10
+        display.show(prog, 1000)
+        music.pitch(440, 20)
+
+    if prog == 0:
+        msg = radio.receive()
+        if msg:
+            display.show(msg)
+            if msg == '0':
+                robot.move(0, 0)
+            elif msg == 'u':
+                robot.move(-80, -80)
+            elif msg == 'r':
+                robot.move(80, -80)
+            elif msg == 'l':
+                robot.move(-80, 80)
+            elif msg == 'd':
+                robot.move(80, 80)
+            elif msg == '2':
+                robot.goToPosition(1, 20)
+            elif msg == '1':
+                robot.goToPosition(1, 160)
+
+    
+    if prog == 1:
+
+        d = distance_cm()
+        for i in range(25):
+            if i < d:
+                display.set_pixel(i//5, i%5, 9)
+            else:
+                display.set_pixel(i//5, i%5, 0)
+    
+        if d <= 10:
+            robot.move(0, 0, 1000)
+            robot.move(-60, -60, 500)
+            robot.goToPosition(1, 160)
+            robot.move(60, -60, 1250)
+            robot.move(-60, -60, 750)
+            display.show(Image('09090:'
+                           '09090:'
+                           '00000:'
+                           '90009:'
+                           '09990'))
+
+            #audio.play(Sound.SPRING)
+            robot.move(0, 0)
+            sleep(1000)
+            robot.goToPosition(1, 20)
+            robot.move(60, -60, 1250)
+
+    if prog == 2:
+        msg = radio.receive()
+        if msg:
+            display.show(msg)
+            if msg == '0':
+                robot.move(0, 0)
+            elif msg == 'u':
+                music.play('c')
+            elif msg == 'r':
+                music.play('d')
+            elif msg == 'l':
+                music.play('e')
+            elif msg == 'd':
+                music.play('f')
+            elif msg == '2':
+                music.play('g')
+            elif msg == '1':
+                music.play('a')
+
+    if prog == 3:
+        while True:
+            display.show(4)
+            mouvement = random.randint(0,5)
+
+            if mouvement ==0:
+                avancer()
+            if mouvement ==1:
+                reculer()
+            if mouvement ==2:
+                gauche()
+            if mouvement ==3:
+                droite()
+            if mouvement ==4:
+                ouvre()
+            else:
+                ferme()
+```
 ## Partie obligatoire
 Dans ce mini-projet le robot
 
@@ -19,6 +162,12 @@ Dans ce mini-projet le robot
 ## Partie libre
 le robot fonctionne sous forme de programme.
 Chaque programme avec un code différent pour réaliser différentes choses.
+- P0 Télécomander
+- P1 Partie obligatoire
+- P2 Musique
+- P3 Dance
+
+
 ### Programme 0
 Le programme 0 est le premier et fait que le robot est télécommender.
 ```
@@ -150,15 +299,8 @@ Et pour le programme 3 nous avons ajouter une dance du robot mais en alléatoire
             else:
                 ferme()
 ```
-## Documentation
-Toute la documentation se trouve dans ce fichier README.md Vous devez utiliser
 
-## 3 niveau de titres
 - liste avec puces et numéroté
-- des examples de code
 - des formules mathématiques
-- des images
-- des hyperliens
-
 
 set_all(color) -essayer
