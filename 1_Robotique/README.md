@@ -5,7 +5,7 @@ option complémentaire en informatique du gymnase du Bugnon
 
 
 Dans ce projet nous programmons le robot Kitronik MOVE
-
+![](images/images.jpg)
 Dans ce projet le robot
 
 - commencer le parcourt à une position A
