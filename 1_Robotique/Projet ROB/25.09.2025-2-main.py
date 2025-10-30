@@ -1,8 +1,6 @@
 from microbit import *
 from machine import time_pulse_us
 import KitronikMOVEMotor
-import random
-import neopixel
 
 trigger = pin13
 echo = pin14
@@ -20,7 +18,7 @@ def distance_cm():
     right = pin2.read_analog()
     d = (left - right)
     d = d // 10
-    robot.move(15 - d, 15 + d)
+    robot.move(10 - d, 10 + d)
     trigger.write_digital(1)
     trigger.write_digital(0)
     distance = time_pulse_us(echo, 1)/58.
@@ -42,29 +40,15 @@ while True:
         robot.move(0, 0, 1000)
         robot.move(-60, -60, 500)#faire plus reculer
         robot.goToPosition(1, 160)
-        robot.move(60, -60, 1300)
+        robot.move(60, -60, 1250)
         robot.move(-60, -60, 750)
         display.show(Image('09090:'
                            '09090:'
                            '00000:'
                            '90009:'
                            '09990'))
-        #for i in range(4):
-            #np[i] = random.choice(colors)
-            #np.show()
-            #sleep(random.randint(100, 500))
 
         #audio.play(Sound.SPRING)
         robot.move(0, 0)
         sleep(1000)
         robot.goToPosition(1, 20)
-        robot.move(60, -60, 700)
-        sleep(1000)
-        robot.goToPosition(1, 160)
-        sleep(1000)
-        robot.move(-60, 60, 700)
-        robot.move(60, -60, 1300)
-        robot.goToPosition(1, 20)
-        
-        
-        
