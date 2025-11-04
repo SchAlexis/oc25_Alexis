@@ -1,0 +1,28 @@
+body {
+    background-color: beige;
+    font-family:Arial, Helvetica, Times, serif;
+}
+/* mon commentaire */
+h1{
+    color: rgb(55, 125, 34);
+    background-color: blue;
+}
+
+h2, h3 {
+    color: green;
+}
+#bienvenue {
+    border: 1px dashed olive;
+    background-color: aqua;
+}
+
+.important {
+    border : 2px solid blue;
+}
+
+.important > strong{
+    text-decoration: underline wavy;
+    color: red;
+    font-style: italic;
+}
+
