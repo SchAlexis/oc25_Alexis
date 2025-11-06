@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(225, 216, 193);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Logo{
+    background-color: rgb(172, 156, 117);
+    margin: 10px 10px 10px 10px;
+}
+
+
+.debut{
+    background-color: rgb(179, 170, 147);
+}
+.text{
+    background-color: rgb(149, 137, 107);
+}

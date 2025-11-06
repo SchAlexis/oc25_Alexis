@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image à côté du texte</title>
+  <style>
+    .container {
+      display: flex;
+      align-items: center; /* aligne verticalement */
+      gap: 20px; /* espace entre l’image et le texte */
+    }
+
+    .container img {
+      width: 150px;
+      border-radius: 10px;
+    }
+
+    .container p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="ton-image.jpg" alt="Une belle image">
+    <p>
+      Voici un texte placé à côté de l’image.  
+      Tu peux ajuster la taille, la couleur ou la disposition avec le CSS.
+    </p>
+
+  </div>
+  <img src="ton-image.jpg" alt="Image" style="float:left; margin-right:15px; width:150px;">
+<p>
+  Voici un texte qui s’enroule autour de l’image.  
+  Cette méthode est plus ancienne mais fonctionne encore bien pour du texte simple.
+</p>
+</body>
+</html>
