@@ -1,8 +1,19 @@
 body {
+    max-width: 800px;
     background-color: rgb(224, 203, 153);
     font-family: Arial, Helvetica, sans-serif;
-    
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("https://i.redd.it/mn7z7ia8qet71.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+
+  
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: darken;
 }
+
+
 
 p {
     width: fit-content;
