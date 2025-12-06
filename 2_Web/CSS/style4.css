@@ -11,7 +11,7 @@ body {
 
 h1, h2, p {
      /* border: solid 1px orange; */
-}
+} 
 
 #navigation {
     background-color: lightgrey;
@@ -41,6 +41,6 @@ img.centrer{
 }
 img.float {
     width: 200px;
-    float: left;
+    float: right;
     margin-right: 10px;
 }

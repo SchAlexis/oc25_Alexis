@@ -16,6 +16,45 @@ body {
 p {
     width: fit-content;
 }
+
+#navigation {
+    font-weight: bold;
+    border-radius: 14px;
+    background-color:  rgb(156, 145, 117);
+    border-left: rgb(121, 112, 90)solid 5px;
+    border-right: rgb(121, 112, 90)solid 5px;
+    border-top: rgb(121, 112, 90)solid 5px;
+    border-bottom: rgb(121, 112, 90)solid 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#navigation a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#navigation a:hover {
+    color: #d4af37;
+    text-shadow: 0 0 10px #d4af37;
+}
+
+#navigation ul {
+    /* border: solid 1px blue; */
+    width: fit-content;
+    padding-left: 0px;
+    margin: auto;
+}
+
+#navigation li {
+    display: inline;
+    /* border: solid 1px red; */
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .debutT{
     background-color: rgb(179, 170, 147);
     border-radius: 14px;
@@ -32,5 +71,34 @@ p {
     
     padding: 0px 0px 0px 20px;
     margin: 0px 10px 10px 0px;
+} 
+
+.explo{
+    background-color: rgb(179, 170, 147);
+    border-radius: 14px;
+    border-left: rgb(156, 145, 117)solid 5px;
+    
+    padding: 0px 0px 0px 20px;
+    margin: 0px 10px 10px 0px;
+} 
+
+.combat{
+    background-color: rgb(179, 170, 147);
+    border-radius: 14px;
+    border-left: rgb(156, 145, 117)solid 5px;
+    
+    padding: 0px 0px 0px 20px;
+    margin: 0px 10px 10px 0px;
+} 
+h1 {
+    text-decoration: underline solid;
 }
 
+img.panorama {
+    width:780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.info{
+    color: white;
+}
