@@ -40,7 +40,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Déterminer l'angle d'oscillation
-    angle += 0.025 * direction;
+    angle += 0.02 * direction;
 
     if (angle > 0.2) direction = -1;   // limite haute (~8.6°)
     if (angle < -0.2) direction = 1;   // limite basse (~-8.6°)
@@ -55,7 +55,7 @@ function draw() {
     ctx.rotate(angle);
 
     // Dessiner l'image centrée
-    ctx.drawImage(img, -75, -75, 150, 150);
+    ctx.drawImage(img, -65, -70, 100, 100);
 
     // Restaurer
     ctx.restore();
