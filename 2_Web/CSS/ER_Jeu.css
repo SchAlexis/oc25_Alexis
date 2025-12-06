@@ -112,7 +112,8 @@ img.map {
 }
 
 canvas {
-    border: solid 2px black;
+    background-color: #ddd;
+    
 }
 
 #particles {

@@ -27,49 +27,40 @@ function createParticle() {
 // Création régulière de particules
 setInterval(createParticle, 300);
 
-const canvas_image = document.getElementById("image");
-const ctx_image = canvas_image.getContext("2d");
+const canvas = document.getElementById("image");
+const ctx = canvas.getContext("2d");
 
-const img_perso = new Image();
+const img = new Image();
+img.src = "images/horse.svg";
 
-img_perso.onload = function() {
-    ctx_image.drawImage(img_perso,1 ,1, 200, 200);
- }
-img_perso.src = "/2_Web/images/perso.svg";
-
-
-const canvasSizeX = 500;
-const canvasSizeY = 500;
-const dx = 1;
-const dy = 1;
-var x = 1;
-var y = 1;
-
-
-
-function init() {
-    img_perso.scr = "/2_Web/images/perso.svg";
-    window.requestAnimationFrame(draw);
-}
+let angle = 0;
+let direction = 1; // 1 = va vers 5° ; -1 = revient vers -5°
 
 function draw() {
-    console.log("hello");
-    ctx_image.clearRect(0, 0, 500, 500);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    if (x > canvasSizeX){
-        ctx_image.translate(-canvasSizeX, -canvasSizeY);
-        x = 1;
-        y = 1;
-    } else{
-        ctx_image.drawImage(img_perso, 1, 1, 200, 200);
-        ctx_image.translate(1, 1);
+    // Déterminer l'angle d'oscillation
+    angle += 0.025 * direction;
 
-    x = x + dx;
-    y = y + dy;
-    }
-    
-    window.requestAnimationFrame(draw);
+    if (angle > 0.2) direction = -1;   // limite haute (~8.6°)
+    if (angle < -0.2) direction = 1;   // limite basse (~-8.6°)
+
+    // Sauvegarde du contexte
+    ctx.save();
+
+    // Déplacer le point de rotation au centre de l'image
+    ctx.translate(100, 100);
+
+    // Appliquer rotation
+    ctx.rotate(angle);
+
+    // Dessiner l'image centrée
+    ctx.drawImage(img, -75, -75, 150, 150);
+
+    // Restaurer
+    ctx.restore();
+
+    requestAnimationFrame(draw);
 }
 
-init() 
-init() 
+img.onload = draw;
