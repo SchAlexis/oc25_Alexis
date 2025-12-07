@@ -52,7 +52,6 @@ p {
 
 
 #navigation ul {
-    /* border: solid 1px blue; */
     width: fit-content;
     padding-left: 0px;
     margin: auto;
@@ -60,7 +59,6 @@ p {
 
 #navigation li {
     display: inline;
-    /* border: solid 1px red; */
     margin-left: 20px;
     margin-right: 20px;
 }
