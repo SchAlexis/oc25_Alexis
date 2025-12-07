@@ -11,6 +11,7 @@ body {
   
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: darken;
+    padding-top: 30px;
 }
 
 
@@ -22,19 +23,20 @@ p {
 #Logo{
     background-color: rgb(172, 156, 117);
     margin: 10px 10px 10px 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 #navigation {
-    
     font-weight: bold;
     border-radius: 14px;
     background-color:  rgb(156, 145, 117);
-    border-left: rgb(121, 112, 90)solid 5px;
-    border-right: rgb(121, 112, 90)solid 5px;
-    border-top: rgb(121, 112, 90)solid 5px;
-    border-bottom: rgb(121, 112, 90)solid 5px;
+    border: rgb(121, 112, 90)solid 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+    position: fixed;
+    top: 5px;
+    width: 800px;    
 }
 #navigation a {
     color: #ddd;
@@ -121,6 +123,13 @@ p {
     padding: 0px 0px 0px 20px;
     margin: 0px 10px 10px 0px;
 }
+.perso{
+    background-color: rgb(179, 170, 147);
+    border-radius: 6px;
+    border-left: rgb(156, 145, 117)solid 5px;
+    padding: 0px 0px 0px 20px;
+    margin: 0px 10px 10px 0px;
+}
 .text{
     background-color: rgb(179, 170, 147);
     border-radius: 14px;
@@ -141,6 +150,8 @@ img.float {
     width: 150px;
     float: right;
     margin-right: 0px;
+    max-width: 100%;
+    height: auto;
 }
 
 img.floatB {
@@ -148,12 +159,16 @@ img.floatB {
     width: 200px;
     float: right;
     margin-right: 0px;
+    max-width: 100%;
+    height: auto;
 }
 img.floatF {
     margin: 20px 10px 10px 10px;
     width: 220px;
     float: right;
     margin-right: 0px;
+    max-width: 100%;
+    height: auto;
 }
 
 #particles {

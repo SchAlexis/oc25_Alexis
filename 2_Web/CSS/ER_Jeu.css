@@ -11,6 +11,7 @@ body {
   
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: darken;
+    padding-top: 30px;
 }
 
 p {
@@ -21,12 +22,12 @@ p {
     font-weight: bold;
     border-radius: 14px;
     background-color:  rgb(156, 145, 117);
-    border-left: rgb(121, 112, 90)solid 5px;
-    border-right: rgb(121, 112, 90)solid 5px;
-    border-top: rgb(121, 112, 90)solid 5px;
-    border-bottom: rgb(121, 112, 90)solid 5px;
+    border: rgb(121, 112, 90)solid 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+    position: fixed;
+    top: 5px;
+    width: 800px;
 }
 
 #navigation a {
