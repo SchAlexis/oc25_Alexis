@@ -23,8 +23,7 @@ p {
 #Logo{
     background-color: rgb(172, 156, 117);
     margin: 10px 10px 10px 10px;
-    max-width: 100%;
-    height: auto;
+
 }
 
 #navigation {
@@ -150,8 +149,7 @@ img.float {
     width: 150px;
     float: right;
     margin-right: 0px;
-    max-width: 100%;
-    height: auto;
+
 }
 
 img.floatB {
@@ -159,16 +157,14 @@ img.floatB {
     width: 200px;
     float: right;
     margin-right: 0px;
-    max-width: 100%;
-    height: auto;
+
 }
 img.floatF {
     margin: 20px 10px 10px 10px;
     width: 220px;
     float: right;
     margin-right: 0px;
-    max-width: 100%;
-    height: auto;
+
 }
 
 #particles {
