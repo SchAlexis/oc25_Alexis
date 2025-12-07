@@ -78,7 +78,6 @@ p {
     background-color: rgb(179, 170, 147);
     border-radius: 14px;
     border-left: rgb(156, 145, 117)solid 5px;
-    min-height: 150px;
     padding: 0px 0px 0px 20px;
     margin: 0px 10px 10px 0px;
 } 
@@ -113,7 +112,6 @@ img.map {
 }
 
 canvas {
-    background-color: rgb(179, 170, 147);
     float: right;
     border-radius: 14px;
 }
