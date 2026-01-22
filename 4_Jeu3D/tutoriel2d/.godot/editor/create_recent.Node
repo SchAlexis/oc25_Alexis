@@ -1,0 +1,8 @@
+ColorRect
+TextureRect
+AudioStreamPlayer2D
+AudioListener2D
+Timer
+Button
+Label
+CanvasLayer
