@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://6hsvaouwuvwp"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_48q7p"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ulk7q"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6addm"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yfyx7"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7sdfy"]
+
+[sub_resource type="Gradient" id="Gradient_3nic7"]
+offsets = PackedFloat32Array(0, 0.99590164, 1)
+colors = PackedColorArray(0.94995385, 0, 0.15065083, 1, 0.5942623, 0.5942623, 0.5942623, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d3krr"]
+gradient = SubResource("Gradient_3nic7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a1upy"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 98, 0)
+color = Color(0.8436365, 0.0014144665, 0.95254475, 1)
+color_initial_ramp = SubResource("GradientTexture1D_d3krr")
+
+[node name="vfx" type="Node2D" unique_id=1127289843]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1234527553]
+position = Vector2(1005.99994, 0.99999994)
+scale = Vector2(40, 40)
+amount = 1000
+lifetime = 2.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_48q7p")
+
+[node name="Label" type="Label" parent="GPUParticles2D" unique_id=1942250876]
+offset_left = -23.125002
+offset_top = -33.575
+offset_right = 73.875
+offset_bottom = -10.575001
+text = "point soucre"
+label_settings = SubResource("LabelSettings_ulk7q")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=1224761986]
+position = Vector2(-3.999878, 2.0000002)
+scale = Vector2(40, 40)
+lifetime = 2.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_6addm")
+
+[node name="Label" type="Label" parent="GPUParticles2D2" unique_id=1726506964]
+offset_left = -23.125002
+offset_top = -33.575
+offset_right = 73.875
+offset_bottom = -10.575001
+text = "point soucre"
+label_settings = SubResource("LabelSettings_ulk7q")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="." unique_id=2068142613]
+position = Vector2(-959.99994, 4)
+scale = Vector2(40, 40)
+amount = 80
+lifetime = 2.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_yfyx7")
+
+[node name="Label" type="Label" parent="GPUParticles2D3" unique_id=657333078]
+offset_left = -23.125002
+offset_top = -33.575
+offset_right = 73.875
+offset_bottom = -10.575001
+text = "point soucre"
+label_settings = SubResource("LabelSettings_7sdfy")
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="." unique_id=1436619695]
+position = Vector2(-1131.9999, 1595.0001)
+scale = Vector2(40, 40)
+amount = 80
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 1.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_yfyx7")
+
+[node name="Label" type="Label" parent="GPUParticles2D5" unique_id=1780290499]
+offset_left = -23.125002
+offset_top = -33.575
+offset_right = 73.875
+offset_bottom = -10.575001
+text = "point soucre"
+label_settings = SubResource("LabelSettings_7sdfy")
+
+[node name="GPUParticles2D7" type="GPUParticles2D" parent="." unique_id=1140768764]
+position = Vector2(232.99988, 1614)
+scale = Vector2(40, 40)
+amount = 80
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 1.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_a1upy")
+
+[node name="Label" type="Label" parent="GPUParticles2D7" unique_id=1522826459]
+offset_left = -23.125002
+offset_top = -33.575
+offset_right = 73.875
+offset_bottom = -10.575001
+text = "point soucre"
+label_settings = SubResource("LabelSettings_7sdfy")
