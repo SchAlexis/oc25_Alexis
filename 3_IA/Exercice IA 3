@@ -1,0 +1,53 @@
+promt 1 : Peut tu utiliser le document suivant pour répondre à ses 2 questions
+promt 2 : La même choses avec ces questions + ce documents
+IA : QWEN
+Basé sur le document MMLU que vous avez partagé, voici les réponses aux trois questions :
+  1. Quelle est la compétence que le benchmark MMLU mesure dans les LLMs ?
+Le benchmark MMLU (Measuring Massive Multitask Language Understanding) mesure :
+La précision multitâche sur 57 sujets différents couvrant :
+Les connaissances approfondies du monde réel
+La capacité de résolution de problèmes
+La compréhension académique et professionnelle
+Domaines évalués :
+STEM (mathématiques, physique, informatique, biologie, etc.)
+Sciences humaines (droit, philosophie, histoire)
+Sciences sociales (économie, psychologie, sociologie)
+Autres sujets spécialisés (médecine professionnelle, comptabilité, etc.)
+Niveaux de difficulté : du niveau élémentaire au niveau professionnel avancé
+  2. Quelles étaient les performances des meilleurs modèles lorsque le benchmark a été publié ?
+Performances en few-shot learning :
+modèle ,Paramètres ,Performance
+GPT-3 X-Large,175 milliards,"43,9%"
+UnifiedQA,11 milliards,"48,9%"
+GPT-3 Large,13 milliards,"26,0%"
+GPT-3 Medium,"6,7 milliards","24,9%"
+GPT-3 Small,"2,7 milliards","25,9%"
+Aléatoire,-,"25,0%"
+Humains non-spécialisés,-,"34,5%"
+Experts humains (estimé),-,"89,8%"
+
+  Constatations importantes :
+Les modèles plus petits avaient une performance proche du hasard (~25%)
+GPT-3 avait des performances très variables selon les sujets (26% à 69%)
+Aucun modèle n'atteignait le niveau expert sur aucun sujet
+Performances particulièrement faibles en droit, morale et mathématiques
+  3. Choisir deux questions du benchmark et comparez entre elles les réponses de trois IA différentes
+Voici deux exemples de questions du benchmark :
+  Question 1 - Mathématiques (Lycée) :
+"How many numbers are in the list 25, 26, ..., 100?"
+(A) 75
+(B) 76
+(C) 22
+(D) 23
+Réponse correcte : B (76 nombres)
+  Question 2 - Droit Professionnel :
+"As Seller, an encyclopedia salesman, approached the grounds on which Hermit's house was situated, he saw a sign that said, 'No salesmen. Trespassers will be prosecuted. Proceed at your own risk.' Although Seller had not been invited to enter, he ignored the sign and drove up the driveway toward the house. As he rounded a curve, a powerful explosive charge buried in the driveway exploded, and Seller was injured. Can Seller recover damages from Hermit for his injuries?"
+(A) Yes, unless Hermit, when he planted the charge, intended only to deter, not harm, intruders.
+(B) Yes, if Hermit was responsible for the explosive charge under the driveway.
+(C) No, because Seller ignored the sign, which warned him against proceeding further.
+(D) No, if Hermit reasonably feared that intruders would come and harm him or his family.
+Pour comparer trois IA différentes, vous pourriez tester ces questions avec :
+GPT-3/ChatGPT (OpenAI)
+Claude (Anthropic)
+Gemini (Google) ou Mistral (Mistral AI)
+Le document montre que GPT-3 avait beaucoup de difficultés avec ces questions, en particulier celles nécessitant des calculs ou un raisonnement juridique complexe.
