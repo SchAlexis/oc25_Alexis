@@ -1,0 +1,114 @@
+Exercice : Analyse de Benchmarks IA
+Voici une aide complète pour réaliser votre exercice sur les benchmarks d'IA.
+1. Trois benchmarks variés sélectionnés
+Benchmark, Domaine, Type de tâches
+MMLU (Massive Multitask Language Understanding), Connaissances générales & raisonnement, "Questions à choix multiples sur 57 sujets (STEM, sciences humaines, droit, médecine, etc.) "33
+HumanEval,Programmation, "Génération de code Python à partir d'énoncés et de docstrings, évalué par tests unitaires "42
+EQ-Bench Creative Writing v3, Écriture créative, Production de textes narratifs évalués par un LLM-juge sur critères stylistiques et émotionnels 52
+Écriture créative
+Production de textes narratifs évalués par un LLM-juge sur critères stylistiques et émotionnels 
+eqbench.com
+2. Tableau récapitulatif des benchmarks
+Critère,MMLU,HumanEval,EQ-Bench Creative Writing
+Année de publication,2021,2021,2024-2025
+Nombre de tâches,~14 000 questions,164 problèmes de code,Variable (évaluations par prompts créatifs)
+Format des questions,QCM à 4 choix,Fonction Python à compléter,Prompt narratif ouvert
+Métrique d'évaluation,Exact Match (% de bonnes réponses),Pass@k (code qui passe les tests),Rubric Score + Elo Score (jugement par LLM)
+Difficulté,Élémentaire → Expert,Algorithmes basiques → intermédiaires,"Créativité, cohérence, style"
+Accès aux données,"Public (GitHub, Hugging Face)",Public (OpenAI GitHub),Public (eqbench.com)
+Site de référence,"PapersWithCode, Hugging Face","OpenAI, DeepEval Docs "43,EQ-Bench Leaderboard 52
+3. Compétences mesurées par chaque benchmark
+🔹 MMLU
+Connaissances factuelles : Capacité à restituer des informations apprises pendant l'entraînement 
+www.datacamp.com
+Raisonnement disciplinaire : Appliquer des concepts spécifiques (mathématiques, histoire, droit, etc.)
+Généralisation : Transférer des connaissances à de nouveaux contextes 
+deepchecks.com
+Compréhension linguistique : Interpréter des questions complexes en langage naturel 
+deepgram.com
+🔹 HumanEval
+Génération de code : Produire du code fonctionnel à partir d'une description textuelle 
+www.datacamp.com
+Compréhension algorithmique : Traduire une logique en syntaxe Python correcte
+Respect des spécifications : Suivre les docstrings et signatures de fonctions
+Robustesse : Le code doit passer des tests unitaires stricts 
+www.statsig.com
+🔹 EQ-Bench Creative Writing
+Créativité narrative : Inventer des histoires cohérentes et engageantes
+Intelligence émotionnelle : Représenter des émotions et relations humaines de façon nuancée 
+eqbench.com
+Style et fluidité : Éviter les répétitions et les "GPT-isms" (phrases génériques) 
+eqbench.com
+Adaptation au prompt : Respecter le ton, le genre et les contraintes demandées
+4. Exemples de questions et comparaison de réponses
+📚 MMLU – Exemple (Microéconomie)
+Question : "If the price of a good increases and the quantity demanded decreases, this illustrates:"
+A) The law of demand
+B) The law of supply
+C) Elasticity
+D) Comparative advantage
+✅ Réponse attendue : A
+🔍 Observation : Les grands modèles (GPT-4, Claude 3.5) répondent correctement >90% du temps. Les modèles locaux 7B-14B peuvent hésiter sur des sujets spécialisés sans contexte supplémentaire.
+💻 HumanEval – Exemple
+Task : "Write a function sum_list that takes a list of numbers and returns their sum."
+✅ Solution attendue :
+python
+12
+def sum_list(numbers: List[float]) -> float:
+    return sum(numbers)
+🔍 Observation :
+Grands modèles : Génèrent souvent du code correct du premier coup (Pass@1 >85%) 
+DEV社区
+Modèles locaux (ex: CodeLlama 7B) : Peuvent nécessiter plusieurs tentatives ou un prompt plus détaillé ; scores Pass@1 typiques de 30-60% selon la complexité 
+runloop.ai
+✍️ Creative Writing – Exemple de prompt
+"Écris le début d'une nouvelle de science-fiction où un humain découvre qu'il peut communiquer avec les étoiles. Ton : poétique mais accessible."
+🔍 Observation :
+Grands modèles : Produisent des textes fluides, avec une bonne structure narrative et peu de répétitions (Slop score bas) 
+eqbench.com
+Modèles locaux : Peuvent être créatifs mais montrent plus de répétitions lexicales ou des incohérences de ton ; l'évaluation par rubric score révèle des écarts de 10-20 points 
+eqbench.com
+💡 Conseil pratique : Pour comparer vous-même, utilisez des plateformes comme Hugging Face Spaces pour tester des modèles locaux, et les APIs officielles pour les grands modèles. Notez la pertinence, la cohérence et le style des réponses.
+5. Évolution des scores sur les benchmarks de référence
+📈 MMLU : Progression exponentielle
+Modèle,Score MMLU (approx.),Année
+GPT-3,~44%,2020
+GPT-3.5,~70%,2022
+GPT-4,86.4%,2023
+Claude 3.5 Sonnet / GPT-4o,~88%,2024
+GPT-4.1 / Claude Opus 4.6,~90-92%,2025-2026 5560
+➡️ Analyse : Le benchmark MMLU, publié en 2021, est aujourd'hui presque "saturé" par les modèles de pointe. Cela illustre le problème de la courte durée de vie des benchmarks : ce qui était difficile il y a 3 ans devient trivial 
+www.confident-ai.com
+.
+📈 HumanEval : De la prouesse à la norme
+Modèle,Pass@1,Année
+Codex (premier résultat),28.8%,2021
+GPT-3.5,~50-60%,2022
+GPT-4,88.4%,2023
+Claude 3.5 Sonnet,~92%,2024
+"Modèles 2026 (GPT-5.x, Claude 4.x)",94-96%,2025-2026 6263
+➡️ Analyse : HumanEval a été largement dépassé, conduisant au développement de versions plus difficiles comme HumanEval+ (tests étendus) et SWE-bench (résolution de vrais problèmes GitHub) 
+www.bracai.eu
+www.emergentmind.com
+.
+📈 Creative Writing : Évaluation émergente
+Les benchmarks d'écriture créative sont plus récents et moins standardisés.
+Sur EQ-Bench, on observe une progression des Elo Scores : les modèles 2024-2026 gagnent 100-200 points Elo par rapport aux versions 2023, grâce à de meilleures capacités de cohérence narrative et de contrôle stylistique 
+eqbench.com
+.
+La métrique "Slop" (fréquence des clichés LLM) diminue régulièrement, signe d'une génération plus naturelle.
+🔎 Sites de référence pour suivre les scores
+Benchmark
+Leaderboards officiels
+MMLU
+PapersWithCode, Hugging Face Open LLM Leaderboard
+HumanEval
+OpenAI HumanEval, LiveCodeBench (plus récent et anti-contamination) 
+artificialanalysis.ai
+Creative Writing
+EQ-Bench Leaderboard 
+eqbench.com
+Général
+Chatbot Arena, Artificial Analysis 
+arena.ai
+artificialanalysis.ai
