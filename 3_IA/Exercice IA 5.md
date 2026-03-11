@@ -27,7 +27,7 @@
 
 ### 📊 Résultats principaux
 
-```mermaid
+mermaid
 graph LR
     A[Conditions expérimentales] --> B[Menace seule]
     A --> C[Conflit d'objectifs seul]
