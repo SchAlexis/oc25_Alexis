@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://b8r34cyiskhtt"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/brackeys-proto-controller-main/proto_controller/proto_controller.tscn" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://b4haqph50vcjw" path="res://addons/assets/sky_background/autumn_field_puresky_4k.hdr" id="2_fos0i"]
+[ext_resource type="PackedScene" uid="uid://cmrk1o5wuheoa" path="res://addons/assets/import_examples/wall_arched_with_collider.glb" id="3_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://bh0i4px05fpx5" path="res://Barrel.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://b1a0dsm272j07" path="res://Chest.tscn" id="4_fos0i"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3dxm6"]
+panorama = ExtResource("2_fos0i")
+
+[sub_resource type="Sky" id="Sky_glv2v"]
+sky_material = SubResource("PanoramaSkyMaterial_3dxm6")
+
+[sub_resource type="Environment" id="Environment_uu6xs"]
+background_mode = 2
+sky = SubResource("Sky_glv2v")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D" unique_id=778860926]
+
+[node name="ProtoController" parent="." unique_id=33190146 instance=ExtResource("1_glv2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 31)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1615391197]
+environment = SubResource("Environment_uu6xs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1309072711]
+transform = Transform3D(-0.83651626, -0.2888487, 0.46562535, 0.22414388, 0.59503484, 0.77181154, -0.50000006, 0.75, -0.43301266, 0, 32.5, 1)
+shadow_enabled = true
+
+[node name="Bulding" type="CSGCombiner3D" parent="." unique_id=1746586536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bulding" unique_id=698274120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4.5, 15)
+size = Vector3(30, 8, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bulding" unique_id=1670161019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4.5, -16)
+size = Vector3(30, 8, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bulding" unique_id=1690116971]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 4.5, -0.5)
+size = Vector3(30, 8, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bulding" unique_id=2115473874]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15, 4.5, -0.5)
+size = Vector3(30, 8, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bulding" unique_id=479730009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 26)
+size = Vector3(20, 4, 1)
+
+[node name="door2" type="CSGBox3D" parent="Bulding" unique_id=392297955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 2, 26)
+operation = 2
+size = Vector3(3.5, 4, 1)
+
+[node name="door1" type="CSGBox3D" parent="Bulding" unique_id=121074703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 2.5, 15)
+operation = 2
+size = Vector3(3.5, 4, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Bulding" unique_id=1912642439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75, 2.5, 5.5)
+size = Vector3(18.5, 4, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Bulding" unique_id=1347939439]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.5, 2.5, 20.5)
+size = Vector3(10, 4, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Bulding" unique_id=63749581]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.5, 2.5, 20.5)
+size = Vector3(10, 4, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Bulding" unique_id=1876221652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6.5, -8.5)
+radius = 1.0
+height = 12.0
+sides = 32
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=962193896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.5)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="wall_arched_with_collider" parent="." unique_id=70206269 instance=ExtResource("3_cm0pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 15)
+
+[node name="wall_arched_with_collider2" parent="." unique_id=1172192769 instance=ExtResource("3_cm0pq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.5, 0, 16)
+
+[node name="Barrel" parent="." unique_id=1348061792 instance=ExtResource("4_cm0pq")]
+transform = Transform3D(-0.4391315, -0.71677136, -0.5416663, -0.78254807, 0.6013306, -0.16130774, 0.44134116, 0.35304457, -0.8249712, -8.812363, 31.026703, 28.210909)
+
+[node name="Node3D" parent="." unique_id=639766413 instance=ExtResource("4_fos0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 30.5)
