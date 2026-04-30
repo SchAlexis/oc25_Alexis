@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://2rfm838e4c8s"]
+
+[ext_resource type="Script" uid="uid://b3cubusmnciy2" path="res://addons/instantiate_matrix.gd" id="1_ajxjt"]
+[ext_resource type="Script" uid="uid://dupcbe082su" path="res://addons/hollow_tube.gd" id="2_6dxww"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swywt"]
+albedo_color = Color(14.222716, 0, 13.558224, 1)
+
+[node name="TestMatrix" type="Node3D" unique_id=1215328523]
+
+[node name="InstantiateMatrix" type="CSGCombiner3D" parent="." unique_id=1007370468]
+script = ExtResource("1_ajxjt")
+material = SubResource("StandardMaterial3D_swywt")
+step = Vector3(1, 10, 1)
+metadata/_custom_type_script = "uid://b3cubusmnciy2"
+
+[node name="Box" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=1847630188]
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
+
+[node name="Box2" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=2046977904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
+
+[node name="Box3" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=803735897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
+
+[node name="Box4" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=1771625136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
+
+[node name="Box5" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=962983337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
+
+[node name="Box6" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=1052886356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
+
+[node name="Box7" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=427895911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
+
+[node name="Box8" type="CSGCylinder3D" parent="InstantiateMatrix" unique_id=1390187638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
+material = SubResource("StandardMaterial3D_swywt")
+script = ExtResource("2_6dxww")
