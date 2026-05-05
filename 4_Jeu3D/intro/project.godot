@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="intro"
+config/name="intro(1)"
 run/main_scene="uid://d1a2v721v7ktm"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
